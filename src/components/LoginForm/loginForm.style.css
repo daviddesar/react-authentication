@@ -1,0 +1,36 @@
+.login-form {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    color: white;
+}
+
+.login-form input {
+    display: block;
+    margin: 30px 0;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding-left: 10px;
+}
+.login-form input:focus {
+    outline: none;
+}
+.login-form input::placeholder {
+    color: white;
+}
+
+.login-form .login-button {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: 10px 20px;
+    background-color: transparent;
+}
+.login-form .create-account {
+    margin-top: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
