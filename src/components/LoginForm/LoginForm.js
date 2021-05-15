@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import firebaseConfig from "../../firebase";
 import "./loginForm.style.css";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,6 +17,7 @@ export default function LoginForm() {
         .signInWithEmailAndPassword(email.value, password.value);
       setEmail("");
       setPassword("");
+      history.push("/private");
     } catch (error) {
       alert(error);
     }

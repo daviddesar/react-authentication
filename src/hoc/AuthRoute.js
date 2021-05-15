@@ -1,18 +1,21 @@
 import React, { Fragment, useContext } from 'react';
 import { useHistory } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
-import Login from '../pages/Login/Login';
 
 const authRoute = (WrappedComponent) => {
-    const AuthComponent = () => {
+    const AuthComponent = (props) => {
+        const history = useHistory();
         const {currentUser} = useContext(AuthContext);
         if (currentUser) {
             return (
-                <WrappedComponent />
+                <WrappedComponent {...props} />
             )
         }
         else {
-            return <Login />
+            history.push("/login")
+            return (
+                <></>
+            )
         }
     }
     return AuthComponent;
