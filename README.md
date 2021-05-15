@@ -27,10 +27,11 @@ Wrapped component ---------------> HOC --------------> Updated Component (Wrappe
       
       return UpdatedComponent;
 
-      // if we dont want to return component but just execute some logic instead: 
+      ~~// if we dont want to return component but just execute some logic instead:~~
       
-      executeFunction();
-      return <></>;
+      ~~executeFunction();~~
+      ~~return <></>;~~ 
+      No we dont do like this (causing side effects in render-return phase -> anti pattern, this should return a pure function
     }
 
     then use the HOC function; ex using in route:
