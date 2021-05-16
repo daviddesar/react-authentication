@@ -12,7 +12,7 @@ export default function LoginForm() {
     e.preventDefault();
     const { email, password } = e.target.elements;
     try {
-      firebaseConfig
+       firebaseConfig
         .auth()
         .signInWithEmailAndPassword(email.value, password.value);
       setEmail("");

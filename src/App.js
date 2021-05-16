@@ -4,8 +4,7 @@ import { Route, Switch } from "react-router";
 import Homepage from "./pages/Homepage/Homepage";
 import PrivateContent from "./pages/PrivateContent/PrivateContent";
 import Login from "./pages/Login/Login";
-import { AuthProvider } from "./context/AuthContext";
-import authRoute from "./hoc/AuthRoute";
+import AuthRoute from "./auth/AuthRoute";
 
 function App() {
   return (
@@ -13,9 +12,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" exact component={Homepage} />
-        <Route path="/private" exact 
-          component={authRoute(PrivateContent)}
-        />
+        <AuthRoute path="/private" component={PrivateContent} />
         <Route path="/login" exact component={Login} />
       </Switch>
     </div>
