@@ -36,3 +36,9 @@ Wrapped component ---------------> HOC --------------> Updated Component (Wrappe
 
     then use the HOC function; ex using in route:
     <Route path="/hoc-using" component={ withHOC(NormalComponent) } />
+    
+    
+** Update 16 May: I found a better solution for auth and routing - [stackoverflow link here](https://stackoverflow.com/questions/43164554/how-to-implement-authenticated-routes-in-react-router-4)
+Description: we will build a <PrivateRoute /> component receiving a component then check if the user is logged in; if yes => return the WrappedComponent; else return the <Redirect /> to login page
+ - PrivateRoute return a <Route {...rest} component={WrappedCompontent} /> if user is authenticated;
+
